@@ -60,7 +60,7 @@ def main(argv):
 
     aws_key = os.environ.get("AWS_ACCESS_KEY_ID")
     aws_secret = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    region = os.environ.get("AWS_EC2_REGION")
+    region = os.environ.get("AWS_EC2_REGION", "us-west-2")
     tag = "Name"
 
     for opt, arg in opts:
