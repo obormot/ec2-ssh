@@ -43,6 +43,9 @@ def ec2_active_instances(label_tag, filters):
             if instance.public_dns_name:
                 pair = (instance_name, instance.public_dns_name)
                 instances.append(pair)
+            elif instance.vpc_id and instance.private_ip_address:
+                pair = (instance_name, instance.private_ip_address)
+                instances.append(pair)
     return instances
 
 
